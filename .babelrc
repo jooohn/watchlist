@@ -1,0 +1,4 @@
+{
+  "plugins": ["import-glob", "transform-class-properties"],
+  "presets": ["next/babel", "babel-preset-env"]
+}

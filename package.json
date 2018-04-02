@@ -1,0 +1,53 @@
+{
+  "name": "watchlist",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.42",
+    "@slack/client": "^4.1.0",
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "cross-env": "^5.1.4",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
+    "jss": "latest",
+    "material-ui": "next",
+    "mongodb": "^3.0.5",
+    "next": "latest",
+    "pixelmatch": "^4.0.2",
+    "pngjs": "^3.3.2",
+    "prop-types": "latest",
+    "puppeteer": "^1.2.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-jss": "latest",
+    "validate.js": "^0.12.0"
+  },
+  "scripts": {
+    "prettier": "prettier --write '{src,pages}/**/*.js' 'server.js'",
+    "dev": "cross-env NODE_ENV=development nodemon server.js --exec babel-node --source-maps --watch server.js --watch src",
+    "db:setup": "NODE_ENV=production babel-node dbsetup.js",
+    "db:seed": "NODE_ENV=production babel-node dbseed.js",
+    "build": "yarn build:next",
+    "build:next": "next build",
+    "start": "cross-env NODE_ENV=production babel-node server.js",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-import-glob": "^2.0.0",
+    "babel-preset-env": "^1.6.1",
+    "dotenv": "^5.0.1",
+    "nodemon": "^1.17.3",
+    "prettier": "1.12.1"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
+}
