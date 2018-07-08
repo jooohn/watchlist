@@ -6,6 +6,8 @@ import { allFrontendSources } from '../../../../sources/frontend';
 import { allFrontendSinks } from '../../../../sinks/frontend';
 import { allFrequencies } from '../../../../models/frequency';
 
+const isSaved = entry => !!entry._id;
+
 const styles = theme => ({
   formControl: {
     minWidth: 120,
@@ -35,6 +37,7 @@ const SourceStep = ({
       value={entry.sourceType}
       errors={validated.sourceType}
       onChange={onChange}
+      readOnly={isSaved(entry)}
       autoFocus
       formControlProps={{
         className: classes.formControl,

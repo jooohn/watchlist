@@ -1,9 +1,9 @@
 import checker from './checker';
 import { allFrequencies } from '../models/frequency';
 
-const oneMinute = 1000 * 60;
+const millisInMinute = 1000 * 60;
 const baseInterval = 15;
-const tickPerDay = 60 / 15 * 24;
+const tickPerDay = (60 / baseInterval) * 24;
 
 const nextTick = tick => (tick + 1) % tickPerDay;
 const shouldCheckOn = tick => entry =>
@@ -26,6 +26,6 @@ export default injection => {
       .catch(console.error);
 
     tick = nextTick(tick);
-  }, oneMinute * baseInterval);
+  }, millisInMinute * baseInterval);
   return () => clearInterval(interval);
 };

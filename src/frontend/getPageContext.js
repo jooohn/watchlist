@@ -6,6 +6,20 @@ import { createGenerateClassName, createMuiTheme } from 'material-ui/styles';
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#63a4ff',
+      main: '#1976d2',
+      dark: '#004ba0',
+      contrastText: '#ffffff',
+    },
+    secondary: {
+      light: '#ff867f',
+      main: '#ff5252',
+      dark: '#c50e29',
+      contrastText: '#000000',
+    },
+  },
   typography: {},
 });
 

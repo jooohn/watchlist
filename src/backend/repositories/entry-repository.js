@@ -33,15 +33,16 @@ export default db => {
 
   const update = id => async ({
     label,
-    // These params are not allowed to update.
+    // SourceType is not allowed to update.
     // sourceType,
-    // sourceParams,
+    sourceParams,
     sinkType,
     sinkParams,
     frequency,
   }) => {
     const params = {
       label,
+      sourceParams,
       sinkType,
       sinkParams,
       frequency,

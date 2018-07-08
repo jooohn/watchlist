@@ -8,6 +8,7 @@ export default {
     db: process.env.MONGO_DB || 'watchlist',
   },
   app: {
+    baseURL: process.env.BASE_URL,
     snapshots: {
       retention: {
         max: process.env.SNAPSHOT_RETENTION_MAX || 10,

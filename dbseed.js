@@ -6,7 +6,11 @@ const seed = async db => {
   await EntryRepository(db).store({
     label: 'Check /',
     sourceType: 'Screenshot',
-    sourceParams: { url: `http://localhost:${config.web.port}/` },
+    sourceParams: {
+      url: `http://localhost:${config.web.port}/`,
+      diffThreshold: 0.1,
+      selector: '',
+    },
     sinkType: 'Slack',
     sinkParams: {
       text: `Watchlist changed! Check ${config.app.baseURL}/entries/{{ entry._id }}`,

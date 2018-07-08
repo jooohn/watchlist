@@ -81,7 +81,7 @@ class EditModal extends React.PureComponent {
       return {
         entry: entry || defaultState.entry,
         passedEntry,
-        activeStepIndex: entry ? 1 : 0,
+        activeStepIndex: 0,
       };
     }
   };
@@ -167,8 +167,7 @@ class EditModal extends React.PureComponent {
     const { entry, activeStepIndex } = this.state;
     const activeStep = steps[activeStepIndex];
     const validated = validate(entry, EntryModel.constraints) || {};
-    const canReturn =
-      activeStepIndex > 1 || (activeStepIndex === 1 && !this.editing());
+    const canReturn = activeStepIndex > 1;
     return (
       <Modal
         open={open}
